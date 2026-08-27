@@ -2,10 +2,13 @@
 YOLO Model, training and test instructions, etc.
 
 To set up Python virtual environment:
-`python3 -m venv .venv
-source .venv/bin/activate`
+
+`python3 -m venv .venv`
+
+`source .venv/bin/activate`
 
 Install ultralytics:
+
 `pip install ultralytics`
 
 To train, run:
