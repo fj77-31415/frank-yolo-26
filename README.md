@@ -47,3 +47,17 @@ Interpreting post-training summary:
 For running Google Colab in VS Code:
 - "Select Kernel" in top right
 - Select Another Kernel > Colab > New Colab Server > GPU > Python3
+
+
+To run inference on some set of images:
+
+`results = model.predict(
+    source="path/to/images_or_folder",
+    imgsz=640,
+    conf=0.25,
+    save=True
+)`
+
+Or straight from terminal command:
+
+`python -m ultralytics.yolo detect predict model=yolo11n.pt source="path/to/images" --imgsz 640 --conf 0.25 --save`
