@@ -99,3 +99,10 @@ USE THIS. (unless you have good reason not to). This was finetuned on our own pr
 4) Duplicated tiles with humans/tents in them many times to make sure we can balance out the huge base-trained images
 5) Fine-tuned YOLO model on the sliced dataset
 6) Ran SAHI inference on new high-rez images
+
+## Using Runpod
+- Add $/credits beforehand, make sure to calculate it out in advance so that you don't lose progress due to insufficient funds
+- (Cost comparison)[https://docs.google.com/spreadsheets/d/1jgyBKXwmqzaOvxQk-t-iPNXSfwQyNJi-T1Oqfur_C-g/edit?usp=sharing]
+- I used RTX 5090s, which were roughly best performance and cost available at the time of writing. When you get to this, check again and figure out which is best for your training workload; use chat to help you figure out what's needed, what's overkill, whittle down options from there, and determine best price x performance.
+- Create a network volume (persistent storage across training runs); set to 10GB and select server that give syou access to the GPUs you need. This costs effectively 0. Keep in mind "Container disk" (or similar) dies when you terminate the pod; allocate things to storage accordingly (although my command in point 7. of the notebook should do this automatically)
+- You can also look into clusters; I never did, I'd just use however many 5090s were available on my server at a given time. Don't use less than 6-8. Make sure you adjust the code you copy paste from the ipnyb accordingly; should match up with # of GPUs you actually have
