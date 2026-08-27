@@ -2,7 +2,7 @@
 YOLO Model, training and test instructions, etc.
 
 For statistics, analysis, basic overview, and issues I ran into, see below:
-(Final Presentation)[https://docs.google.com/presentation/d/1GAdOyTbnxtWnAKf4xW30D_5jbgR6zHZnz4NtlhCe0-s/edit?usp=sharing]
+[Final Presentation](https://docs.google.com/presentation/d/1GAdOyTbnxtWnAKf4xW30D_5jbgR6zHZnz4NtlhCe0-s/edit?usp=sharing)
 
 To set up Python virtual environment:
 
@@ -93,7 +93,7 @@ USE THIS. (unless you have good reason not to). This was finetuned on our own pr
 
 ## My Training Workflow
 1) Used Roboflow to manually annotate the images that we took. Sorted into Train, Val, and Test folders. Used standard box, not polygon/auto-classify, since I wanted it to be as accurate as possible and YOLO uses boxes, not polygons. 
-(My Dataset)[https://app.roboflow.com/franks-workspace-8dch5/customaerialpics/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true]
+[My Dataset](https://app.roboflow.com/franks-workspace-8dch5/customaerialpics/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true)
 2) Ran slicing script to cut master images into tiles
 3) Deleted bunch of empty background tiles
 4) Duplicated tiles with humans/tents in them many times to make sure we can balance out the huge base-trained images
@@ -102,7 +102,7 @@ USE THIS. (unless you have good reason not to). This was finetuned on our own pr
 
 ## Using Runpod
 - Add $/credits beforehand, make sure to calculate it out in advance so that you don't lose progress due to insufficient funds
-- (Cost comparison)[https://docs.google.com/spreadsheets/d/1jgyBKXwmqzaOvxQk-t-iPNXSfwQyNJi-T1Oqfur_C-g/edit?usp=sharing]
+- [Cost comparison](https://docs.google.com/spreadsheets/d/1jgyBKXwmqzaOvxQk-t-iPNXSfwQyNJi-T1Oqfur_C-g/edit?usp=sharing)
 - I used RTX 5090s, which were roughly best performance and cost available at the time of writing. When you get to this, check again and figure out which is best for your training workload; use chat to help you figure out what's needed, what's overkill, whittle down options from there, and determine best price x performance.
 - Create a network volume (persistent storage across training runs); set to 10GB and select server that give syou access to the GPUs you need. This costs effectively 0. Keep in mind "Container disk" (or similar) dies when you terminate the pod; allocate things to storage accordingly (although my command in point 7. of the notebook should do this automatically)
 - You can also look into clusters; I never did, I'd just use however many 5090s were available on my server at a given time. Don't use less than 6-8. Make sure you adjust the code you copy paste from the ipnyb accordingly; should match up with # of GPUs you actually have
