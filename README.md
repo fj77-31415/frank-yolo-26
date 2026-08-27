@@ -6,7 +6,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 
 Install ultralytics:
-pip install ultralytics
+`pip install ultralytics`
 
 To train, run:
 python3 yolo-starter.py
@@ -43,4 +43,4 @@ Interpreting post-training summary:
 
 For running Google Colab in VS Code:
 - "Select Kernel" in top right
-- > Select Another Kernel > Colab > New Colab Server > GPU > Python3
+- Select Another Kernel > Colab > New Colab Server > GPU > Python3
