@@ -52,7 +52,7 @@ For running Google Colab in VS Code:
 - Select Another Kernel > Colab > New Colab Server > GPU > Python3
 
 
-To run inference on some set of images, comment this section out:
+To run inference on some set of images, uncomment this section:
 
 ```
 results = model.predict(
