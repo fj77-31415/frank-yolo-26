@@ -96,7 +96,7 @@ USE THIS. (unless you have good reason not to). This was finetuned on our own pr
 [My Dataset](https://app.roboflow.com/franks-workspace-8dch5/customaerialpics/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true)
 2) Ran slicing script to cut master images into tiles
 3) Deleted bunch of empty background tiles
-4) Duplicated tiles with humans/tents in them many times to make sure we can balance out the huge base-trained images
+4) Duplicated tiles with humans/tents in them many times to make sure we can balance out the huge number of base-trained images
 5) Fine-tuned YOLO model on the sliced dataset
 6) Ran SAHI inference on new high-rez images
 
