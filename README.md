@@ -112,3 +112,7 @@ results = model.predict(
 Or straight from terminal command:
 
 `python -m ultralytics.yolo detect predict model=yolo11n.pt source="path/to/images" --imgsz 640 --conf 0.25 --save`
+
+
+## Questions
+If anything here is unclear, I can be reached by text at 408-680-6300 or at fj77@cornell.edu (frankjunkar@gmail.com if after spring 2028)
