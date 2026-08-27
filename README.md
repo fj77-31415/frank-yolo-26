@@ -1,7 +1,7 @@
 # frank-yolo-26
 YOLO Model, training and test instructions, etc.
 
-For statistics, analysis, basic overview, and issues I ran into, see below:
+For statistics, analysis, basic overview, and issues I ran into, see this:
 [Final Presentation](https://docs.google.com/presentation/d/1GAdOyTbnxtWnAKf4xW30D_5jbgR6zHZnz4NtlhCe0-s/edit?usp=sharing)
 
 To set up Python virtual environment:
