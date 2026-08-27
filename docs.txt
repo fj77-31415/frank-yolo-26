@@ -1,0 +1,43 @@
+To set up Python virtual environment:
+python3 -m venv .venv
+source .venv/bin/activate
+
+Install ultralytics:
+pip install ultralytics
+
+To train:
+python3 yolo-starter.py
+
+Interpreting post-training summary:
+- Box(...) is metrics for bounding-box detections
+- P (Precision) = TP / (TP + FP). Of all predicted boxes, how many are correct 
+  (above the IoU threshold and correct class). High P = few false positives.
+  - TP: True Positive
+  - FP: False Positive
+  - FN: False Negative
+- R (Recall) = TP / (TP + FN). Of all ground-truth (GT) objects, how many were found. 
+  High R = few missed objects
+  - GT: labeled/true annotations in dataset (bounding boes + class labels), used as 
+    reference when evaluating predictions
+- mAP50 = mean Average Precision at IoU >= 0.50. AP is computed from the 
+  precision–recall curve for each class; mAP50 is the average of those APs 
+  across classes using IoU=0.5 (a relatively lenient match threshold).
+  - IoU (Intersection over Union): area(overlap of predicted box & ground-truth 
+    box) / area(union of the 2 boxes)
+    - helps decide whether prediction matches a GT (e.g. IoU >= 0.5 for AP@50)
+- mAP50-95 = mean AP averaged over multiple IoU thresholds 0.50:0.05:0.95 (i.e., 
+  0.50, 0.55, …, 0.95). This is the COCO-style stricter/robust metric that 
+  penalizes poor localization more heavily.
+
+- Example: Box 0.05 0.22 0.0977 0.0511 means precision≈5%, recall≈22%, 
+  AP@0.5≈9.8%, AP@0.5:0.95≈5.1% for that class.
+
+- Low P, high R → many detections but lots of false positives (model is permissive)
+- High P, low R → few false positives but many misses (model is conservative).
+- mAP50 >> mAP50-95 → localization is coarse (works at loose IoU but fails at tighter IoUs).
+- Use mAP50-95 as the main overall quality metric; mAP50 is useful for quick/lenient checks.
+
+
+For running Google Colab in VS Code:
+- "Select Kernel" in top right
+- > Select Another Kernel > Colab > New Colab Server > GPU > Python3
