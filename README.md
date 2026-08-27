@@ -51,12 +51,14 @@ For running Google Colab in VS Code:
 
 To run inference on some set of images:
 
-`results = model.predict(
+```
+results = model.predict(
     source="path/to/images_or_folder",
     imgsz=640,
     conf=0.25,
     save=True
-)`
+)
+```
 
 Or straight from terminal command:
 
